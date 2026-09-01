@@ -22,6 +22,7 @@ All notable changes to this kit are recorded here.
   `linear-ticket-management`.
 - Made acceptance criteria and ticket relationship context optional suggestions
   for Linear ticket creation.
+- Made the Linear ticket assignee optional.
 
 ## 0.1.0 - 2026-08-31
 

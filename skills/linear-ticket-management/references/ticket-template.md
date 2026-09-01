@@ -43,7 +43,7 @@ section.
 | Source type, link/ID, and summary | Required; link/ID may be `Not available`. |
 | Initial state | Required; default to `Backlog` only when available in the selected team. |
 | Priority | Required; default to `No priority`. |
-| Assignee | Required input; may be `Unassigned` if the user chooses it. |
+| Assignee | Optional; leave it unassigned when the user does not provide one. |
 | Acceptance criteria | Suggested; do not block creation when omitted. |
 | References and relationship rationale | Suggested; `None identified` is valid. |
 
