@@ -19,6 +19,8 @@ All notable changes to this kit are recorded here.
 
 ### Changed
 
+- Added `summary` (default), `detailed`, and `full` detail levels to
+  `source-triage-report`, including bounded, selective collection guidance.
 - Require explicit user invocation for `source-triage-report` and prevent its
   analysis subagent from making source calls.
 - Clarified that Linear MCP access is required for both reads and writes, while

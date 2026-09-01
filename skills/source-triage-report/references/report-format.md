@@ -11,9 +11,10 @@ source records for verification.
 
 - Sources requested: <only the user-selected sources>
 - Request: <original request>
-- Normalized plan: <source, entity, filters, time range, order, limit>
+- Normalized plan: <source, entity, filters, time range, order, limit, detail level>
 - Reconnaissance: <what was discovered and criteria derived>
 - Collection: <counts, pagination, truncation, unavailable sources>
+- Detail handling: <summary, detailed, or full; expanded fields and any condensed material>
 - Analysis execution: <subagent or principal-agent fallback>
 
 ## Coverage and limitations
@@ -55,6 +56,12 @@ faithful concise summary and preserve the link or identifier.
 
 | Record or group | Reason excluded | Source link |
 | --- | --- | --- |
+
+In a `summary` report, group routine exclusions by a meaningful shared reason
+and give a count and source query or location. List individual records when
+they are related to a candidate or needed to explain a decision. In `detailed`
+and `full` reports, include the per-record detail appropriate to the selected
+level.
 
 ## Sources
 

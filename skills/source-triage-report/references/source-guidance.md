@@ -30,12 +30,20 @@ activity in the report.
 ## Query planning
 
 Normalize the user request before querying. State the source, entity type,
-filters, ordering, time window, and requested limit. A request such as
+filters, ordering, time window, requested limit, and detail level. The detail
+level is **summary** by default; accept **detailed** or **full** when the user
+requests them. A request such as
 “everything” remains bounded by the default cap of 500 records per source when
 no limit is supplied; it is not evidence that the source has been exhaustively
 read. Record that limitation.
 
 Use the source's supported server-side filters and pagination when possible.
+Prefer field selection and compact list queries for the first pass. Fetch
+expanded record detail only according to the selected detail level, in bounded
+batches where possible. A `full` report is comprehensive for the collected
+scope, but is not permission to load arbitrary raw payloads, unbounded event
+streams, or repetitive nested content that does not improve review; record
+counts, representative evidence, and links instead.
 If a source cannot filter as requested, collect only a reasonable candidate
 set, apply a transparent local filter, and describe that limitation. Do not
 claim a complete result set when pagination, access, or query support prevents

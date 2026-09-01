@@ -31,8 +31,8 @@ act on the report's recommendations.
   say so. When other named sources are usable, continue and record the gap and
   its effect on confidence.
 - Interpret a natural-language request into an auditable query plan: source,
-  requested scope, filters, time range, and limit. Run an explicit plan without
-  a separate confirmation.
+  requested scope, filters, time range, limit, and detail level. Run an
+  explicit plan without a separate confirmation.
 
 ## Collect and analyze
 
@@ -45,19 +45,38 @@ act on the report's recommendations.
 2. Execute the requested query with pagination where available. Honor a user
    limit. For a broad request without a limit, collect up to 500 records per
    source and state prominently that more records may exist. Record any
-   truncation, inaccessible fields, or failed pages.
-3. Normalize only the information needed for review: stable ID, title/summary,
-   URL or source location, state, priority, timestamps, owner/work signals,
-   user-report evidence, and relevant context. Preserve useful evidence in the
-   report: provide enough excerpt or detail to review the conclusion without
-   opening the source where practical; summarize only when volume makes that
-   necessary.
-4. When the host supports subagents, give one a read-only analysis task over
-   the normalized evidence. It may classify candidates and propose relations or
-   clusters, but it must not make source calls or perform mutations. If
-   delegation is unavailable, perform the same analysis directly and note that
-   fallback in the report.
-5. Prioritize activity, impact, original human priority, evidence of user
+   truncation, inaccessible fields, or failed pages. Use selective fields and
+   compact pages where the source supports them; do not load raw payloads or
+   verbose nested material before it is needed.
+3. Choose the requested detail level, or use **summary** by default:
+   - **summary**: inspect compact evidence for the full collected scope, then
+     retrieve enough additional context automatically for candidates, clusters,
+     and ambiguous cases. Aggregate clearly irrelevant exclusions rather than
+     reproducing each record; retain a query, count, and source location that
+     make the coverage traceable.
+   - **detailed**: do the same, with expanded evidence for every candidate and
+     related record, plus richer context for material exclusions.
+   - **full**: retrieve and present all relevant accessible record detail for
+     the collected scope. It is not a raw source export: paginate in bounded
+     batches, select useful fields, and summarize repetitive or oversized
+     nested material while retaining its count, representative evidence, and
+     source link.
+   A detail level changes report depth, not the requested record scope or its
+   limit. Do not require a follow-up request to expand records that materially
+   affect a conclusion.
+4. Normalize only the information needed for the selected level: stable ID,
+   title/summary, URL or source location, state, priority, timestamps,
+   owner/work signals, user-report evidence, and relevant context. Preserve
+   useful evidence in the report: provide enough excerpt or detail to review
+   the conclusion without opening the source where practical; summarize only
+   when volume makes that necessary.
+5. When the host supports subagents, give one a read-only analysis task over a
+   compact normalized index and the expanded evidence for selected records. It
+   may classify candidates and propose relations or clusters, but it must not
+   make source calls or perform mutations. Do not duplicate raw source output
+   into its context. If delegation is unavailable, perform the same analysis
+   directly and note that fallback in the report.
+6. Prioritize activity, impact, original human priority, evidence of user
    impact, corroboration, and actionability unless the user explicitly asks for
    a different universe. Never silently downgrade a human priority.
 
