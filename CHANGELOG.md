@@ -17,7 +17,7 @@ All notable changes to this kit are recorded here.
   particular coding agent.
 - Documented the standard skill layout: concise `SKILL.md` entry points with
   on-demand documentation in `references/`.
-- Require explicit invocation for `linear-ticket-management`.
+- Required explicit invocation for `linear-ticket-management`.
 - Documented interactive and direct installation for
   `linear-ticket-management`.
 - Made acceptance criteria and ticket relationship context optional suggestions
