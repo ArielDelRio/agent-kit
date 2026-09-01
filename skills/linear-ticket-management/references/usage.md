@@ -8,15 +8,17 @@ systems.
 
 ## Common requests
 
-Ask in plain language or invoke the skill explicitly. Start by selecting a
-project and team whenever the request needs a target.
+The skill can be selected automatically from a plain-language request. To invoke
+it explicitly in agents that support `$skill-name`, prefix the request with
+`$linear-ticket-management`. Start by selecting a project and team whenever the
+request needs a target.
 
 ```text
-List the Linear projects I can access.
-List tickets in project QWave Second Brain and team QWave Labs.
-Show the details and relationships for QWA-123.
-Show tickets assigned to me in the QWave Labs team.
-Assign QWA-123 to Ana and move it to In Progress.
+$linear-ticket-management List the Linear projects I can access.
+$linear-ticket-management List tickets in project QWave Second Brain and team QWave Labs.
+$linear-ticket-management Show the details and relationships for QWA-123.
+$linear-ticket-management Show tickets assigned to me in the QWave Labs team.
+$linear-ticket-management Assign QWA-123 to Ana and move it to In Progress.
 ```
 
 For creation, provide the source and enough information for the ticket
@@ -24,7 +26,7 @@ template. The skill asks for any missing required information, runs a focused
 duplicate check, and shows the final draft before creating anything.
 
 ```text
-Create a ticket in project QWave Second Brain and team QWave Labs.
+$linear-ticket-management Create a ticket in project QWave Second Brain and team QWave Labs.
 Source: Slack, https://example.com/message/123.
 The onboarding flow does not explain when the vault setup has finished.
 Assign it to me. The acceptance criterion is that users see a completion state
@@ -38,7 +40,7 @@ This is separate from the automatic duplicate check used during ticket creation.
 Ask explicitly when you want semantic discovery:
 
 ```text
-Find tickets related to “document events and user deliveries” in project QWave
+$linear-ticket-management Find tickets related to “document events and user deliveries” in project QWave
 Second Brain and team QWave Labs.
 ```
 
@@ -50,7 +52,7 @@ or changes relations until you choose what to do.
 ## Closing and follow-up
 
 ```text
-Move QWA-123 to Done.
+$linear-ticket-management Move QWA-123 to Done.
 ```
 
 After the confirmed state change, the skill may recommend a textual follow-up
