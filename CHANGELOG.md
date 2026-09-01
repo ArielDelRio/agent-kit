@@ -14,6 +14,8 @@ All notable changes to this kit are recorded here.
   onboarding documentation.
 - Project-local installation of the upstream `skill-creator` skill for Codex.
 - Project-local installation of the upstream `grill-me` skill.
+- Project-local installations of the upstream `grill-with-docs`, `grilling`,
+  and `handoff` skills, with Claude entry points.
 
 ### Changed
 
