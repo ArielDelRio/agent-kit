@@ -1,6 +1,7 @@
 ---
 name: linear-ticket-management
 description: Manage Linear projects and tickets with consistent source-traceable ticket creation, duplicate checks, and user-approved changes.
+disable-model-invocation: true
 ---
 
 # Linear ticket management

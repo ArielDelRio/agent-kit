@@ -17,6 +17,7 @@ All notable changes to this kit are recorded here.
   particular coding agent.
 - Documented the standard skill layout: concise `SKILL.md` entry points with
   on-demand documentation in `references/`.
+- Require explicit invocation for `linear-ticket-management`.
 
 ## 0.1.0 - 2026-08-31
 

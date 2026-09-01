@@ -2,16 +2,24 @@
 
 ## Prerequisite
 
-Connect an authenticated Linear MCP using your own account. The skill does not
-include credentials, workspace configuration, or access to external source
-systems.
+This skill requires a connected, authenticated Linear MCP using your own
+account. Without it, the skill cannot list, read, create, or update Linear
+tickets. It does not include credentials, workspace configuration, or access to
+external source systems.
+
+## Invoke the skill
+
+Explicit invocation is required; the skill is not selected automatically.
+
+| Agent | Invocation |
+| --- | --- |
+| Codex | `$linear-ticket-management <request>` |
+| Claude Code | `/linear-ticket-management <request>` |
+
+For another agent, use its documented explicit skill-invocation syntax. Start
+by selecting a project and team whenever the request needs a target.
 
 ## Common requests
-
-The skill can be selected automatically from a plain-language request. To invoke
-it explicitly in agents that support `$skill-name`, prefix the request with
-`$linear-ticket-management`. Start by selecting a project and team whenever the
-request needs a target.
 
 ```text
 $linear-ticket-management List the Linear projects I can access.
