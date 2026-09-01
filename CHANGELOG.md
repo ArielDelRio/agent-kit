@@ -19,6 +19,8 @@ All notable changes to this kit are recorded here.
 
 ### Changed
 
+- Write default `source-triage-report` Markdown output to the user's OS
+  temporary directory rather than the current workspace.
 - Improved the Linear ticket template's multi-source evidence format with a
   traceable table and clear separation between source reports and related
   Linear work.

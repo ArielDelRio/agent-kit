@@ -107,6 +107,7 @@ before writing the output.
   **review** when the conflict materially affects the conclusion.
 
 Write one Markdown report that presents findings, not a query audit, at the
-user-provided location. Otherwise use
-`source-triage-report-YYYY-MM-DD.md` in the current directory; if it exists,
-add a time or numeric suffix rather than overwriting it.
+user-provided location. Otherwise save
+`source-triage-report-YYYY-MM-DD.md` in the user's OS temporary directory,
+not the current workspace; if it exists, add a time or numeric suffix rather
+than overwriting it.
