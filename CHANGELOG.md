@@ -19,6 +19,8 @@ All notable changes to this kit are recorded here.
 
 ### Changed
 
+- Refocused `source-triage-report` on requested ticket findings and removed
+  routine query-plan, collection, and limitations sections from its output.
 - Added `summary` (default), `detailed`, and `full` detail levels to
   `source-triage-report`, including bounded, selective collection guidance.
 - Require explicit user invocation for `source-triage-report` and prevent its

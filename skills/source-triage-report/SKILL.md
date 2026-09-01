@@ -30,9 +30,10 @@ act on the report's recommendations.
 - Treat all source operations as read-only. If a named source is unavailable,
   say so. When other named sources are usable, continue and record the gap and
   its effect on confidence.
-- Interpret a natural-language request into an auditable query plan: source,
-  requested scope, filters, time range, limit, and detail level. Run an
-  explicit plan without a separate confirmation.
+- Interpret a natural-language request into a query plan: source, requested
+  scope, filters, time range, limit, and detail level. Use it to make the
+  review reliable, but do not turn it into a report section. Mention a scope
+  limit only where it materially changes a finding or confidence.
 
 ## Collect and analyze
 
@@ -44,10 +45,11 @@ act on the report's recommendations.
    what the source exposes.
 2. Execute the requested query with pagination where available. Honor a user
    limit. For a broad request without a limit, collect up to 500 records per
-   source and state prominently that more records may exist. Record any
-   truncation, inaccessible fields, or failed pages. Use selective fields and
-   compact pages where the source supports them; do not load raw payloads or
-   verbose nested material before it is needed.
+   source. Record any truncation, inaccessible fields, or failed pages. Put
+   those facts in the report only when they materially change a finding or its
+   confidence. Use selective fields and compact pages where the source
+   supports them; do not load raw payloads or verbose nested material before
+   it is needed.
 3. Choose the requested detail level, or use **summary** by default:
    - **summary**: inspect compact evidence for the full collected scope, then
      retrieve enough additional context automatically for candidates, clusters,
@@ -63,7 +65,9 @@ act on the report's recommendations.
      source link.
    A detail level changes report depth, not the requested record scope or its
    limit. Do not require a follow-up request to expand records that materially
-   affect a conclusion.
+   affect a conclusion. When the user requests one or more identified tickets,
+   lead with their current state, reported problem, impact, evidence, relevant
+   context, and next decision—not collection mechanics or generic ranking.
 4. Normalize only the information needed for the selected level: stable ID,
    title/summary, URL or source location, state, priority, timestamps,
    owner/work signals, user-report evidence, and relevant context. Preserve
@@ -75,7 +79,7 @@ act on the report's recommendations.
    may classify candidates and propose relations or clusters, but it must not
    make source calls or perform mutations. Do not duplicate raw source output
    into its context. If delegation is unavailable, perform the same analysis
-   directly and note that fallback in the report.
+   directly; do not report the implementation detail.
 6. Prioritize activity, impact, original human priority, evidence of user
    impact, corroboration, and actionability unless the user explicitly asks for
    a different universe. Never silently downgrade a human priority.
@@ -102,6 +106,7 @@ before writing the output.
 - Surface conflicting source evidence rather than resolving it. Recommend
   **review** when the conflict materially affects the conclusion.
 
-Write one Markdown report at the user-provided location. Otherwise use
+Write one Markdown report that presents findings, not a query audit, at the
+user-provided location. Otherwise use
 `source-triage-report-YYYY-MM-DD.md` in the current directory; if it exists,
 add a time or numeric suffix rather than overwriting it.

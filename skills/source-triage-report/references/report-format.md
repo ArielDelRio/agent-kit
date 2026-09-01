@@ -1,74 +1,72 @@
 # Report format
 
-Use this structure unless the user's requested output requires a compatible
-variation. Keep the report self-contained enough for review while linking all
-source records for verification.
+Use a findings-first structure. Keep the report self-contained enough for
+review while linking source records for verification. Do not include `Scope and
+queries`, `Coverage and limitations`, reconnaissance, pagination, collection
+counts, or agent-execution details as routine sections. Those are working
+notes, not the result the user asked to read.
+
+For a request for identified tickets, use the ticket-focused format below. For
+a broad triage, retain only the sections that help a person decide what needs
+attention; omit empty sections.
 
 ```markdown
 # Source triage report — <date>
 
-## Scope and queries
-
-- Sources requested: <only the user-selected sources>
-- Request: <original request>
-- Normalized plan: <source, entity, filters, time range, order, limit, detail level>
-- Reconnaissance: <what was discovered and criteria derived>
-- Collection: <counts, pagination, truncation, unavailable sources>
-- Detail handling: <summary, detailed, or full; expanded fields and any condensed material>
-- Analysis execution: <subagent or principal-agent fallback>
-
-## Coverage and limitations
-
-<Access gaps, default-cap warning, missing fields, and their effect on confidence.>
-
 ## Executive summary
 
-<Counts and the most important review decisions.>
+<The direct answer: what is happening, why it matters, and the current
+decision or next human action. For a single ticket, this can be a short
+paragraph rather than a count.>
 
-## Candidates for review
+## Tickets
 
-| Candidate | Decision | Original priority | Activity and impact | Evidence | Confidence | Suggested human action |
-| --- | --- | --- | --- | --- | --- | --- |
+### <Ticket ID — title>
 
-For every candidate, identify facts separately from inferences and link its
-source record.
+| Field | Current information |
+| --- | --- |
+| Status | <status> |
+| Priority / owner | <priority and owner, if available> |
+| Impact | <reported or observed impact> |
+| Affected area | <route, product, component, or user context> |
 
-## Clusters and relationships
+**Reported problem:** <concise, context-sufficient customer report or summary>
 
-### <Cluster name or representative record>
+**What the evidence shows:** <observed facts, followed by a clearly labelled
+inference only when useful.>
 
-- Relationship: `recommended cluster` | `cluster candidate` | `possible relation`
-- Representative: <ID, title, link, and reason selected>
-- Related records: <every ID, title, and link>
-- Shared evidence: <facts>
-- Inference and confidence: <reason>
-- Suggested human action: <non-executed action>
+**What to do next:** <the concrete human decision, investigation, or response
+that the evidence supports.>
 
-## User reports and operational evidence
+## Related issues and evidence
 
-| Source | Record | Date | Context | Relationship to candidate | Confidence |
-| --- | --- | --- | --- | --- | --- |
+### <Related issue or linked investigation>
 
-Use a context-sufficient excerpt when practical. For large material, give a
-faithful concise summary and preserve the link or identifier.
-
-## Exclusions
-
-| Record or group | Reason excluded | Source link |
-| --- | --- | --- |
-
-In a `summary` report, group routine exclusions by a meaningful shared reason
-and give a count and source query or location. List individual records when
-they are related to a candidate or needed to explain a decision. In `detailed`
-and `full` reports, include the per-record detail appropriate to the selected
-level.
+- Relationship: `standalone` | `recommended cluster` | `cluster candidate` |
+  `possible relation`
+- Relevant evidence: <facts that change the requested ticket's interpretation>
+- Conclusion and confidence: <reason>
 
 ## Sources
 
 <Canonical links or locations consulted.>
 ```
 
-Use `retain`, `review`, or `discard` only for a review recommendation;
-do not use any of them to imply a source mutation. Put original status and
-priority beside the recommendation rather than replacing them. If evidence is
+Use a table for multiple tickets when it makes comparison easier; preserve the
+reported problem, impact, evidence, and next action for each ticket. Do not
+label an explicitly requested ticket `discard` merely because it is not a
+priority candidate.
+
+Include related issues and supporting evidence only when they materially change
+the ticket's interpretation. Do not surface broadly adjacent issues just
+because they were encountered during collection.
+
+If a limitation changes the conclusion—for example, a missing ticket thread,
+truncated result set, or unavailable source—state it briefly beside the
+affected ticket or evidence. Do not add a standalone limitations section for
+ordinary boundaries of the request.
+
+Use `retain`, `review`, or `discard` only for a review recommendation; do not
+use any of them to imply a source mutation. Put original status and priority
+beside the recommendation rather than replacing them. If evidence is
 contradictory, show both sides and use `review` when it affects the result.

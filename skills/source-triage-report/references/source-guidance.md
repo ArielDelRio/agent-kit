@@ -29,13 +29,15 @@ activity in the report.
 
 ## Query planning
 
-Normalize the user request before querying. State the source, entity type,
-filters, ordering, time window, requested limit, and detail level. The detail
+Normalize the user request before querying. Record the source, entity type,
+filters, ordering, time window, requested limit, and detail level in working
+notes; do not include this plan in the final report by default. The detail
 level is **summary** by default; accept **detailed** or **full** when the user
 requests them. A request such as
 “everything” remains bounded by the default cap of 500 records per source when
 no limit is supplied; it is not evidence that the source has been exhaustively
-read. Record that limitation.
+read. Mention that limitation in the result only if it could change a reported
+conclusion.
 
 Use the source's supported server-side filters and pagination when possible.
 Prefer field selection and compact list queries for the first pass. Fetch
@@ -45,7 +47,8 @@ scope, but is not permission to load arbitrary raw payloads, unbounded event
 streams, or repetitive nested content that does not improve review; record
 counts, representative evidence, and links instead.
 If a source cannot filter as requested, collect only a reasonable candidate
-set, apply a transparent local filter, and describe that limitation. Do not
+set, apply a transparent local filter, and describe that limitation only where
+it affects a finding. Do not
 claim a complete result set when pagination, access, or query support prevents
 one.
 
@@ -65,7 +68,8 @@ The default triage favors records with a defensible combination of:
 5. A sufficiently clear next human decision.
 
 When the user explicitly requests a broader or different population, follow
-that request and state how it differs from the default triage.
+that request. Mention the population boundary only when it changes how the
+reader should interpret a finding.
 
 ## Similarity and user evidence
 
