@@ -19,6 +19,9 @@ All notable changes to this kit are recorded here.
 
 ### Changed
 
+- Improved the Linear ticket template's multi-source evidence format with a
+  traceable table and clear separation between source reports and related
+  Linear work.
 - Refocused `source-triage-report` on requested ticket findings and removed
   routine query-plan, collection, and limitations sections from its output.
 - Added `summary` (default), `detailed`, and `full` detail levels to

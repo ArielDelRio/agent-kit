@@ -54,10 +54,13 @@ choose. Default priority to **No priority** unless the user supplies one.
 
 Collect every required template field before proposing the ticket. Offer
 acceptance criteria and references/relationship rationale as useful but optional
-context; do not block creation when the user omits them. Preserve the original
-source record in the description; later edits may append context but must not
-overwrite it. When the source includes a URL, also add it as a native Linear
-link alongside the source record.
+context; do not block creation when the user omits them. For multiple
+independent source records, use the template's evidence table when it improves
+readability, preserving one complete record per row. Keep source evidence
+separate from related Linear work. Preserve the original source record in the
+description; later edits may append context but must not overwrite it. When the
+source includes a URL, also add it as a native Linear link alongside the source
+record.
 
 Before proposing creation, automatically search the selected project and team
 for plausible duplicates. Compare title, problem, expected outcome, source
