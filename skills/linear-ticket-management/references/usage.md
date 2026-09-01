@@ -64,8 +64,7 @@ This is separate from the automatic duplicate check used during ticket creation.
 Ask explicitly when you want semantic discovery:
 
 ```text
-$linear-ticket-management Find tickets related to “document events and user deliveries” in project QWave
-Second Brain and team QWave Labs.
+$linear-ticket-management Find tickets related to "document events and user deliveries" in project QWave Second Brain and team QWave Labs.
 ```
 
 The skill delegates a read-only search to a subagent when the host supports
