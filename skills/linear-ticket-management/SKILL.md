@@ -39,7 +39,8 @@ Support these operations directly through the Linear MCP:
 
 - List projects, teams, project tickets, a user's assigned tickets, and users.
 - Retrieve a ticket with its details and existing relations.
-- Create a ticket from the required template fields.
+- Create a ticket from the required template fields and offer suggested fields
+  when useful.
 - Edit supplied ticket fields, assign or unassign a user, and update state.
 - Add a native Linear relation only after the user chooses it.
 
@@ -49,10 +50,12 @@ choose. Default priority to **No priority** unless the user supplies one.
 
 ## Creation and duplicate check
 
-Collect every required template field before proposing the ticket. Preserve the
-original source record in the description; later edits may append context but
-must not overwrite it. When the source includes a URL, also add it as a native
-Linear link alongside the source record.
+Collect every required template field before proposing the ticket. Offer
+acceptance criteria and references/relationship rationale as useful but optional
+context; do not block creation when the user omits them. Preserve the original
+source record in the description; later edits may append context but must not
+overwrite it. When the source includes a URL, also add it as a native Linear
+link alongside the source record.
 
 Before proposing creation, automatically search the selected project and team
 for plausible duplicates. Compare title, problem, expected outcome, source

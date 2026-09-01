@@ -20,6 +20,8 @@ All notable changes to this kit are recorded here.
 - Require explicit invocation for `linear-ticket-management`.
 - Documented interactive and direct installation for
   `linear-ticket-management`.
+- Made acceptance criteria and ticket relationship context optional suggestions
+  for Linear ticket creation.
 
 ## 0.1.0 - 2026-08-31
 

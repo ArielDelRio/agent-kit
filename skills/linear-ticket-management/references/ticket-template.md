@@ -11,7 +11,7 @@ section.
 
 <What is happening, who is affected, and why it matters.>
 
-## Acceptance criteria
+## Acceptance criteria (suggested)
 
 - <Observable condition that proves the ticket is complete>
 
@@ -22,7 +22,7 @@ section.
 - Provided by: <person or role, when known>
 - Summary: <brief account of the originating report or decision>
 
-## References and relationships
+## References and relationships (suggested)
 
 - Related tickets: <identifiers/URLs, or "None identified">
 - Rationale: <why these are related, or "Not applicable">
@@ -44,8 +44,8 @@ section.
 | Initial state | Required; default to `Backlog` only when available in the selected team. |
 | Priority | Required; default to `No priority`. |
 | Assignee | Required input; may be `Unassigned` if the user chooses it. |
-| Acceptance criteria | Required. |
-| References and relationship rationale | Required input; `None identified` is valid. |
+| Acceptance criteria | Suggested; do not block creation when omitted. |
+| References and relationship rationale | Suggested; `None identified` is valid. |
 
 ## Editing rule
 
