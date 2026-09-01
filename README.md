@@ -68,6 +68,10 @@ inside a skill only when they directly support its workflow.
   manage Linear projects and tickets with consistent, source-traceable ticket
   creation. Its [usage guide](skills/linear-ticket-management/references/usage.md)
   covers common operations and semantic related-ticket discovery.
+- [`source-triage-report`](skills/source-triage-report/SKILL.md): produce a
+  read-only, evidence-backed Markdown report from explicitly selected issue,
+  feedback, or telemetry sources. Its [report format](skills/source-triage-report/references/report-format.md)
+  describes the reviewable output.
 - [`weekly-reporting`](skills/weekly-reporting/SKILL.md): turn rough weekly
   updates into concise status reports.
 

@@ -6,15 +6,25 @@ All notable changes to this kit are recorded here.
 
 ### Added
 
+- `source-triage-report`, a read-only, multi-source triage skill that produces
+  evidence-backed Markdown reports without modifying the source systems.
 - Agent-neutral repository guidance in `AGENTS.md` and a `CLAUDE.md` pointer.
 - `linear-ticket-management`, a portable Linear MCP skill with a consistent
   ticket template, duplicate checks, explicit related-ticket discovery, and
   onboarding documentation.
 - Project-local installation of the upstream `skill-creator` skill for Codex.
 - Project-local installation of the upstream `grill-me` skill.
+- Project-local installations of the upstream `grill-with-docs`, `grilling`,
+  and `handoff` skills, with Claude entry points.
 
 ### Changed
 
+- Refocused `source-triage-report` on requested ticket findings and removed
+  routine query-plan, collection, and limitations sections from its output.
+- Added `summary` (default), `detailed`, and `full` detail levels to
+  `source-triage-report`, including bounded, selective collection guidance.
+- Require explicit user invocation for `source-triage-report` and prevent its
+  analysis subagent from making source calls.
 - Clarified that Linear MCP access is required for both reads and writes, while
   explicit user confirmation is required only before writes.
 - Generalized installation and smoke-test documentation to avoid preferring a
