@@ -18,6 +18,8 @@ All notable changes to this kit are recorded here.
 - Documented the standard skill layout: concise `SKILL.md` entry points with
   on-demand documentation in `references/`.
 - Require explicit invocation for `linear-ticket-management`.
+- Documented interactive and direct installation for
+  `linear-ticket-management`.
 
 ## 0.1.0 - 2026-08-31
 

@@ -1,5 +1,21 @@
 # Using `linear-ticket-management`
 
+## Install
+
+After this skill is merged, install it from the repository in either mode:
+
+```bash
+# Interactive selector: choose linear-ticket-management and your agent.
+npx skills add ArielDelRio/agent-kit
+
+# Direct installation: install only this skill.
+npx skills add ArielDelRio/agent-kit --skill linear-ticket-management
+```
+
+The interactive selector is intended for a normal terminal. When run inside
+Codex, the CLI detects the host and installs non-interactively; use the direct
+command to select this skill there.
+
 ## Prerequisite
 
 This skill requires a connected, authenticated Linear MCP using your own
