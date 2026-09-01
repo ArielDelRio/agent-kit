@@ -19,12 +19,12 @@ Or inspect the available skills before selecting one:
 npx skills add ArielDelRio/agent-kit --list
 ```
 
-Install a specific skill for Codex in the current project:
+Install a specific skill in the current project:
 
 ```bash
 npx skills add ArielDelRio/agent-kit \
   --skill weekly-reporting \
-  --agent codex
+  --agent <your-agent>
 ```
 
 Use `--global` only when you want a skill available across all of your projects:
@@ -32,11 +32,11 @@ Use `--global` only when you want a skill available across all of your projects:
 ```bash
 npx skills add ArielDelRio/agent-kit \
   --skill weekly-reporting \
-  --agent codex \
+  --agent <your-agent> \
   --global
 ```
 
-The same skill can be installed for Claude Code with `--agent claude-code`.
+Replace `<your-agent>` with the target supported by your local `skills` CLI.
 Skills are installed selectively; nothing installs every skill unless you
 explicitly choose that option.
 
@@ -62,6 +62,15 @@ configs/                     # Sanitized configuration examples when needed
 Each skill is self-contained. Add scripts, references, templates, or assets
 inside a skill only when they directly support its workflow.
 
+## Available skills
+
+- [`linear-ticket-management`](skills/linear-ticket-management/SKILL.md):
+  manage Linear projects and tickets with consistent, source-traceable ticket
+  creation. Its [usage guide](skills/linear-ticket-management/references/usage.md)
+  covers common operations and semantic related-ticket discovery.
+- [`weekly-reporting`](skills/weekly-reporting/SKILL.md): turn rough weekly
+  updates into concise status reports.
+
 ## Security
 
 This is a public repository. Never add credentials, API tokens, customer data,
@@ -83,4 +92,4 @@ DISABLE_TELEMETRY=1 npx skills add ArielDelRio/agent-kit --list
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full verification checklist.
-
+Repository-wide guidance for coding agents lives in [AGENTS.md](AGENTS.md).
