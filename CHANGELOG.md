@@ -11,6 +11,7 @@ All notable changes to this kit are recorded here.
   ticket template, duplicate checks, explicit related-ticket discovery, and
   onboarding documentation.
 - Project-local installation of the upstream `skill-creator` skill for Codex.
+- Project-local installation of the upstream `grill-me` skill.
 
 ### Changed
 
