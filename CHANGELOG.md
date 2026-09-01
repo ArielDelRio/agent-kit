@@ -6,6 +6,8 @@ All notable changes to this kit are recorded here.
 
 ### Added
 
+- `source-triage-report`, a read-only, multi-source triage skill that produces
+  evidence-backed Markdown reports without modifying the source systems.
 - Agent-neutral repository guidance in `AGENTS.md` and a `CLAUDE.md` pointer.
 - `linear-ticket-management`, a portable Linear MCP skill with a consistent
   ticket template, duplicate checks, explicit related-ticket discovery, and
@@ -15,6 +17,8 @@ All notable changes to this kit are recorded here.
 
 ### Changed
 
+- Require explicit user invocation for `source-triage-report` and prevent its
+  analysis subagent from making source calls.
 - Clarified that Linear MCP access is required for both reads and writes, while
   explicit user confirmation is required only before writes.
 - Generalized installation and smoke-test documentation to avoid preferring a
