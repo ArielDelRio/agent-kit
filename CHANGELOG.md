@@ -10,9 +10,12 @@ All notable changes to this kit are recorded here.
 - `linear-ticket-management`, a portable Linear MCP skill with a consistent
   ticket template, duplicate checks, explicit related-ticket discovery, and
   onboarding documentation.
+- Project-local installation of the upstream `skill-creator` skill for Codex.
 
 ### Changed
 
+- Clarified that Linear MCP access is required for both reads and writes, while
+  explicit user confirmation is required only before writes.
 - Generalized installation and smoke-test documentation to avoid preferring a
   particular coding agent.
 - Documented the standard skill layout: concise `SKILL.md` entry points with

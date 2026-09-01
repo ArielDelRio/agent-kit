@@ -21,17 +21,19 @@ the user asks how the skill works or needs examples.
 
 ## Preconditions and scope
 
-- Confirm that a Linear MCP connection is available before an operation. If it
-  is not, explain that the user must connect and authenticate their own Linear
-  account.
+- A connected, authenticated Linear MCP is required for every operation,
+  including reads. Before using Linear, confirm that the connection is
+  available. If it is not, explain that the user must connect and authenticate
+  their own Linear account.
 - The user explicitly chooses both the Linear project and team for operations
   that need them. List available projects and teams when necessary; do not
   infer a target from a ticket title or source.
 - Resolve available workflow states and eligible users from the selected team
   at run time. Do not assume that every team has the same workflow.
-- Read operations need no confirmation. Before every create, edit, assignment,
-  state change, or relation write, show the proposed changes and obtain an
-  explicit confirmation.
+- Connection availability is separate from user confirmation: read operations
+  may proceed without user confirmation once the Linear MCP connection is
+  available. Before every create, edit, assignment, state change, or relation
+  write, show the proposed changes and obtain an explicit user confirmation.
 
 ## Core operations
 
