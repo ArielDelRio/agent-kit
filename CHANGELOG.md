@@ -6,6 +6,12 @@ All notable changes to this kit are recorded here.
 
 ### Added
 
+- `daily-report`, a skill for writing the HedgeStone daily engineering report
+  from the git, GitHub and Linear record, with a Monday range rule for the
+  weekend, a mandatory honest-accounting section, and a worked example in
+  `references/`. It requires explicit user invocation, and carries a maintainer
+  note recording that its client-specific references should be removed or
+  parameterized, pending a move to a private QWave Labs repository.
 - `source-triage-report`, a read-only, multi-source triage skill that produces
   evidence-backed Markdown reports without modifying the source systems.
 - Agent-neutral repository guidance in `AGENTS.md` and a `CLAUDE.md` pointer.
@@ -16,6 +22,11 @@ All notable changes to this kit are recorded here.
 - Project-local installation of the upstream `grill-me` skill.
 - Project-local installations of the upstream `grill-with-docs`, `grilling`,
   and `handoff` skills, with Claude entry points.
+
+### Removed
+
+- `weekly-reporting`, which existed only as a scaffold test. Its references
+  were dropped from `README.md` and `CONTRIBUTING.md`.
 
 ### Changed
 

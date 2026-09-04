@@ -23,7 +23,7 @@ Install a specific skill in the current project:
 
 ```bash
 npx skills add ArielDelRio/agent-kit \
-  --skill weekly-reporting \
+  --skill {skill-name} \
   --agent <your-agent>
 ```
 
@@ -31,7 +31,7 @@ Use `--global` only when you want a skill available across all of your projects:
 
 ```bash
 npx skills add ArielDelRio/agent-kit \
-  --skill weekly-reporting \
+  --skill {skill-name} \
   --agent <your-agent> \
   --global
 ```
@@ -46,7 +46,7 @@ Updates are manual. Read the release notes, then update only the skills you
 want:
 
 ```bash
-npx skills update weekly-reporting
+npx skills update {skill-name}
 ```
 
 We publish changes through pull requests, reviewed releases, and this
@@ -64,6 +64,13 @@ inside a skill only when they directly support its workflow.
 
 ## Available skills
 
+- [`daily-report`](skills/daily-report/SKILL.md): write the HedgeStone daily
+  engineering report from the real git, GitHub and Linear record, covering the
+  previous working day. Requires explicit invocation. Its
+  [worked example](skills/daily-report/references/example-report.md) shows the
+  exact header, sections, tables and footer to copy. This skill is
+  client-specific rather than portable, and is expected to move to a private
+  QWave Labs repository.
 - [`linear-ticket-management`](skills/linear-ticket-management/SKILL.md):
   manage Linear projects and tickets with consistent, source-traceable ticket
   creation. Its [usage guide](skills/linear-ticket-management/references/usage.md)
@@ -72,8 +79,6 @@ inside a skill only when they directly support its workflow.
   read-only, evidence-backed Markdown report from explicitly selected issue,
   feedback, or telemetry sources. Its [report format](skills/source-triage-report/references/report-format.md)
   describes the reviewable output.
-- [`weekly-reporting`](skills/weekly-reporting/SKILL.md): turn rough weekly
-  updates into concise status reports.
 
 ## Security
 

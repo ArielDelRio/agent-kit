@@ -36,7 +36,7 @@ real project or global agent configuration:
 TASK_TEST_DIR="$(mktemp -d)"
 cd "$TASK_TEST_DIR"
 DISABLE_TELEMETRY=1 npx skills add ArielDelRio/agent-kit \
-  --skill weekly-reporting --agent <your-agent> --copy --yes
+  --skill {skill-name} --agent <your-agent> --copy --yes
 npx skills list --agent <your-agent> --json
 ```
 
